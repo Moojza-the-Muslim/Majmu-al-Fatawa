@@ -1,1 +1,18 @@
+media:
+  input: static/uploads
+  output: /uploads
+
+content:
+  - name: fatwas
+    label: Fatwas
+    type: collection
+    path: src/content/fatwas
+    filename: "{slug}.md"
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: scholar, label: Scholar, type: string, required: true }
+      - { name: category, label: Category, type: select, options: ["Aqeedah","Fiqh","Manhaj","Hadith","Tazkiyah","Misc"], required: true }
+      - { name: tags, label: Tags, type: list }
+      - { name: sources, label: Sources, type: list, help: "Paste URLs or full citations. These display at the bottom." }
+      - { name: body, label: Fatwa Text, type: rich-text }
 
